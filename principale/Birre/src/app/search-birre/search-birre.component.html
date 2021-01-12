@@ -1,1 +1,12 @@
-<p>search-birre works!</p>
+<p>
+  <input type="text" #newquery>
+  <button (click)="getBirre(newquery)">Search</button>
+</p>
+
+  <div *ngIf="results &&  results.length > 0">
+    <div class="card" style="width:400px" *ngFor="let t of results">
+       <img class="card-img-top img-responsive" src="{{ t.image_url }}" alt="Card image">
+       <h1 href="#" [routerLink]="['/prod', t.id]" class="btn btn-primary">{{t.name}}</h1>
+       <h3 class="card-title">prima bevuta: {{t.first_brewed}}</h3>
+    </div>
+</div>
