@@ -1,1 +1,22 @@
-<p>item-birre works!</p>
+<div *ngIf="birra">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col">
+        <h1>{{ birra.name }}</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <img src="{{birra.image_url}}" height="100px">
+      </div>
+
+      <div class="col-10">
+        prima bevuta: <div class="text-muted">{{birra.first_brewed}}</div><br>
+
+      </div>
+    </div>
+    <button (click)="back()" type="button" class="btn btn-primary">Back</button>
+  </div>
+</div>
